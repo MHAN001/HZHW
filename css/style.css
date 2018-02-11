@@ -1,4 +1,4 @@
-hvr-bounce-to-bottom
+
 body{
 	margin:0;
 	font-family: 'PT_Sans-Narrow-Web-Regular';
@@ -20,7 +20,7 @@ body a{
 	text-decoration:none;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;			   
+	margin:0;
 }
 p{
 	margin:0;
@@ -88,7 +88,7 @@ button.btn.btn-default:focus {
   background-color:inherit !important;
   box-shadow: none !important;
   border-color:none !important;
-  
+
 }
 span.glyphicon.glyphicon-search {
     font-size: 1.3em;
@@ -195,7 +195,7 @@ div#bs-example-navbar-collapse-1 {
 	position: relative;
 }
 .banner-text {
-    width: 30%;	
+    width: 30%;
 }
 .banner-text h2 {
     font-size: 4em;
@@ -399,7 +399,7 @@ ul.social-slide li i{
 }
 ul.social-slide li i.win{
 	background-position:-6px 0px;
-} 
+}
 ul.social-slide li i.android{
 	background-position:-110px 0px;
 }
@@ -1048,7 +1048,7 @@ h3.title {
 }
 .work-row-grids {
     margin: 1em 0 4em;
-}	
+}
 }
 @media(max-width:1080px){
 .banner {
@@ -1105,7 +1105,7 @@ h1 a.navbar-brand {
 }
 }
 @media(max-width:1024px){
-.map iframe {   
+.map iframe {
    height: 280px;
 }
 .contact-right input[type="text"] {
@@ -1286,7 +1286,7 @@ button.navbar-toggle {
 .navbar-nav > li > a {
     padding: 1em 0;
     font-size: 1.2em;
-    text-align: center;    
+    text-align: center;
 }
 .navbar-default .navbar-nav > li > a{
 	color: #01553D;
@@ -1604,5 +1604,3 @@ h3.title {
 }
 }
 /*--//responsive-design---*/
-
-
