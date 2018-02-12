@@ -1128,9 +1128,6 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin-left: auto; 
-  margin-right:auto; 
-  display:block;
 }
 .img-rounded {
   border-radius: 6px;
@@ -1150,9 +1147,6 @@ img {
 }
 .img-circle {
   border-radius: 50%;
-  clear: both;
-  display: block;
-  margin: auto;
 }
 hr {
   margin-top: 20px;
