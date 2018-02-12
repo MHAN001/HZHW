@@ -153,7 +153,7 @@
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 					<div>
 						<img class="img-responsive img-circle" src="https://i.imgur.com/kGih81o.jpg" alt="" >
-					</div>	
+					</div>
 					<!-- <div class="work-grids-img">
 						<span class="glyphicon glyphicon-dashboar" aria-hidden="true"></span>
 					</div>	 -->
@@ -165,7 +165,7 @@
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 					<div>
 						<img class="img-responsive img-circle" src="https://i.imgur.com/rdOquj5.jpg" alt=""  >
-					</div>	
+					</div>
 					<!-- <div class="work-grids-img">
 						<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 					</div> -->
@@ -178,8 +178,8 @@
 						<img class="img-responsive img-circle" src="https://i.imgur.com/sfg5cs4.jpg" alt=""  >
 					</div>	<!-- <div class="work-grids-img">
 						<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-          </div> -->	
-					<div class="caption work-captn"> 
+          </div> -->
+					<div class="caption work-captn">
 						<h4>Symbolism</h4>
 						<p>Lanterns, Chunlian (Spring couplets), Fortune gods, Chinese knotting, New year picture </p>
 					</div>
@@ -187,7 +187,7 @@
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 					<div>
 						<img class="img-responsive img-circle" src="https://i.imgur.com/tmMfmzY.jpg" alt=""  >
-					</div>	
+					</div>
 					<!-- <div class="work-grids-img">
 						<span class="glyphicon glyphicon-sound-5-1" aria-hidden="true"></span>
 					</div> -->
@@ -199,7 +199,7 @@
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 					<div>
 						<img class="img-responsive img-circle" src="https://i.imgur.com/sYxxFX5.jpg?1" alt="" align="middle" >
-					</div>	
+					</div>
 					<!-- <div class="work-grids-img">
 						<span class="glyphicon glyphicon-oil" aria-hidden="true"></span>
 					</div> -->
@@ -211,7 +211,7 @@
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 					<div>
 						<img class="img-responsive img-circle" src="https://i.imgur.com/mEjDe3l.jpg" alt=""  >
-					</div>	
+					</div>
 					<!-- <div class="work-grids-img">
 						<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 					</div> -->
@@ -331,7 +331,7 @@
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->  
+    <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
 </body>
 <footer class="footer-bs">
@@ -371,17 +371,39 @@
                 </ul>
             </div>
         	<div class="col-md-3 footer-ns animated fadeInRight">
-            	<h4>Newsletter</h4>
-                <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+            	<h4>Validate your email</h4>
+                <p>Before you submit your information, you can try to validate your email first.</p>
                 <p>
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search for...">
+                      <input type="text" class="form-control" required="required" placeholder="Your email" onblur="validateInputs(this,2)">
+											<div id="errorMsgEmailId" style="display:none;color:white" >
+											<h1>Invalid!</h1>
+											<br /><br />
+											</div>
                       <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                        <input class="btn btn-default" type="submit"><span class="glyphicon glyphicon-envelope"></span></button>
                       </span>
                     </div><!-- /input-group -->
                  </p>
             </div>
         </div>
+				<script>
+			  function validateInputs(object, type){
+			 	 var regExEmail = /^([\w\.]+)@([\w\.]+)\.(\w+)$/;
+			 	 var name = 'errorMsg';
+			 		if(!object.value.match(regExEmail)){
+			 						object.style.border="2px solid red";
+			 						document.getElementById("errorMsgEmailId").style.display="block";
+			 						object.value = "";
+			 					}
+			 					else{
+			 						object.style.border="";
+			 						document.getElementById("errorMsgEmailId").style.display="none";
+									alert("It is validate");
+			 					}
+
+
+			  }
+			  </script>
     </footer>
 </html>
