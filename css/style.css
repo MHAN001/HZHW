@@ -19,7 +19,7 @@ body a{
 	text-decoration:none;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;			   
+	margin:0;
 }
 p{
 	margin:0;
@@ -87,7 +87,7 @@ button.btn.btn-default:focus {
   background-color:inherit !important;
   box-shadow: none !important;
   border-color:none !important;
-  
+
 }
 span.glyphicon.glyphicon-search {
     font-size: 1.3em;
@@ -197,7 +197,7 @@ div#bs-example-navbar-collapse-1 {
 	position: relative;
 }
 .banner-text {
-    width: 30%;	
+    width: 30%;
 }
 .banner-text h2 {
     font-size: 4em;
@@ -401,7 +401,7 @@ ul.social-slide li i{
 }
 ul.social-slide li i.win{
 	background-position:-6px 0px;
-} 
+}
 ul.social-slide li i.android{
 	background-position:-110px 0px;
 }
@@ -443,7 +443,7 @@ ul.social-slide li i.mac{
   padding: 5em 0;
 }
 h3.title {
-    color: #01553d;
+    color: #E4A412;
     font-size: 3em;
     margin-bottom: 1em;
     text-align: center;
@@ -856,6 +856,8 @@ h2.resp-accordion {
 /*--contact--*/
 .contact-form {
 	padding:5em 0;
+	background: url(../image/contactbg.jpg);
+	opacity: 0%;
 }
 .map {
     padding: 0 0 5em !important;
@@ -944,12 +946,12 @@ h2.resp-accordion {
   -webkit-appearance: none;
 }
 .contact-right input[type="submit"] {
-    border: 1px solid #01553D;
+    border: 1px solid #F01F25;
     padding: .7em 0;
     width: 22%;
     margin-top: 0.8em;
     font-size: 1.1em;
-    color: #01553D;
+    color: #F01F25;
     letter-spacing: 1px;
     outline: none;
     background-color: #fff;
@@ -961,7 +963,7 @@ h2.resp-accordion {
 	  -webkit-appearance: none;
 }
 .contact-right input[type="submit"]:hover{
-	background-color:#01553D;
+	background-color:#E4A412;
 	color:#fff;
 }
 /*--footer--*/
@@ -1050,7 +1052,7 @@ h3.title {
 }
 .work-row-grids {
     margin: 1em 0 4em;
-}	
+}
 }
 @media(max-width:1080px){
 .banner {
@@ -1107,7 +1109,7 @@ h1 a.navbar-brand {
 }
 }
 @media(max-width:1024px){
-.map iframe {   
+.map iframe {
    height: 280px;
 }
 .contact-right input[type="text"] {
@@ -1288,7 +1290,7 @@ button.navbar-toggle {
 .navbar-nav > li > a {
     padding: 1em 0;
     font-size: 1.2em;
-    text-align: center;    
+    text-align: center;
 }
 .navbar-default .navbar-nav > li > a{
 	color: #01553D;
@@ -1606,5 +1608,3 @@ h3.title {
 }
 }
 /*--//responsive-design---*/
-
-
