@@ -538,7 +538,7 @@ h3.title {
 /*--services--*/
 .services {
     padding: 5em 0;
-    background: url(https://i.imgur.com/krXTDdD.jpg?1) fixed;
+    background: url(../image/China-Fireworks.jpg) fixed;
     background-size: cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;
