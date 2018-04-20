@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="bootstrap.min.css" />
-  <link rel="stylesheet" href="Animae.css" />
-  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/Animae.css" />
+  <link rel="stylesheet" href="css/footer.css" />
   <meta charset="utf-8" >
   <meta name="viewport" content="width = device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content />
   <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="bootstrap.js"></script>
 
@@ -23,6 +24,30 @@
     _d[_d.is(':hover')?'addClass':'removeClass']('show');
   },300);
 });
+  </script>
+  <script>
+  $(document).ready(function(){
+    $.get("http://127.0.0.1:8000/article/newclothes/", function(res){
+      document.getElementById("newclothes").innerHTML= res.content;
+    })
+    $.get("http://127.0.0.1:8000/article/tangsuit/", function(res){
+      document.getElementById("tangsuit").innerHTML= res.content;
+    })
+    $.get("http://127.0.0.1:8000/article/qipao/", function(res){
+      document.getElementById("qipaoar").innerHTML= res.content;
+    })
+    $("#searchbtn").click(function(){
+      var title = document.getElementById("searchfield").value;
+      var tst = $.get("http://127.0.0.1:8000/article/"+title+"/", function(res){
+        alert(res.content);
+      }).fail(function(){
+
+        alert("Article is not in our database!");
+      })
+    })
+  });
+
+
   </script>
 <style type="text/css">
   .dropdown_menu:hover>.dropdown-menu {
@@ -72,8 +97,8 @@
             </div>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
-            <input class="form-controle mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-controle mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="searchfield">
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" id="searchbtn">Search</button>
           </form>
         </div>
     </nav>
@@ -133,8 +158,7 @@
                 <a class="text-dark" href="#">Tang Suit</a>
               </h3>
               <div class="mb-1 text-muted">April 21</div>
-              <p class="card-text mb-auto">Tang suit used to refer to dress from the Tang dynasty. But the “new” Tang suit is a jacket that combines the Man riding jacket (Qing dynasty) and the Western suit.</p>
-              <p class="card-text mb-auto">However, modern styles still preserve the stiff straight collar and frog buttons. Popular embroidered designs include flowers, birds and phoenixes.</p>
+              <p class="card-text mb-auto" id="tangsuit"></p>
               <a class="text-danger font-weight-bold" href="https://chinesenewyear2018.com/clothes/">Continue reading</a>
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="img/tangsuit.jpg" data-holder-rendered="true">
@@ -148,7 +172,7 @@
                 <a class="text-dark" href="#">Qipao (旗袍—qí páo)</a>
               </h3>
               <div class="mb-1 text-muted">April 22</div>
-              <p class="card-text mb-auto">The qipao entered mainstream Chinese culture during the Qing dynasty. But the modern styles we know today are very different from how it was originally. It began as a conservative dress with straight and loose cuts. Intricate designs were embroidered into the fabric. Through colonization, the qipao became westernized.</p>
+              <p class="card-text mb-auto" id="qipaoar"></p>
               <a class="text-danger font-weight-bold" href="https://chinesenewyear2018.com/clothes/">Continue reading</a>
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="img/qipaoThumb.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
@@ -161,15 +185,8 @@
           <h2 class="display-5 d-print-none IBM" id="Singnificance">Significance of new clothes</h2>
           <div class="my-3 py-3">
           </div>
-          <div style="width: 56%; height: 300px; left: 0px; border-radius: 21px 21px 0 0; float: left;" >
-            The Spring Festival is a time of change and new beginnings. Practically every activity during the Spring Festival has the purpose of removing the old and welcoming the new. Forget about the misfortunes and be ready for good luck. In addition, new clothes are auspicious and can protect you from evil spirits.
+          <div style="width: 56%; height: 300px; left: 0px; border-radius: 21px 21px 0 0; float: left;"  id="newclothes" >
 
-  Like the New Year couplets and other decorations, new clothes also add to the festivity. In the past, China was an agrarian society. There was only 1 harvest per year in the north and 2-3 in the south. Throughout the entire year, people scrimped and saved.
-
-  But during Chinese New Year, people can finally splurge and treat themselves. This side of new clothes is a little lost on the younger generations. But it’s a sign that the current standard of living is higher than before. Still, it’s important to be aware of the historical significance.
-
-  How and when?
-  You can buy yourself new clothes. But often, they will be given as gifts from the family. Because it’s a sign of a fresh start, it’s best to wear your new attire on New Year’s Day.
           </div>
           <div style="float: right; height: 400px;">
             <form>

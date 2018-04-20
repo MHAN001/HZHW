@@ -1,4 +1,4 @@
-@import "css/bgstyle.css";
+@import "bgstyle.css";
 .Melody{
   font-family: 'Hi Melody', cursive;
   font-size: 70px;
@@ -60,8 +60,8 @@
     width: 400px;
     height: 400px;
     margin: 0 auto;
-    background: #69c url(img/bggif.gif);
-    cursor: url('img/cursor.png') 35 0,pointer;
+    background: #69c url(../img/bggif.gif);
+    cursor: url('../img/cursor.png') 35 0,pointer;
     text-align: center;
     position: relative;
 }
@@ -104,7 +104,7 @@
     top: -40%;
     left: 20%;
     /* visibility: hidden; */
-    background: url(img/enemy.png);
+    background: url(../img/enemy.png);
 }
 
 
@@ -115,7 +115,7 @@
     position: absolute;
     top: -16%;
     left: 0;
-    background-image: url(img/bonus.png);
+    background-image: url(../img/bonus.png);
     -moz-appearance: button;
     -webkit-appearance: button;
     appearance: button;
@@ -172,6 +172,7 @@
     left: 0;
     height: 200px;
     width: 400px;
+    position: absolute;
     color: #fff;
     text-shadow: 1px 1px 1px #aaa;
     box-shadow: none;

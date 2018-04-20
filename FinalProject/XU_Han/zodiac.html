@@ -6,26 +6,76 @@
 	<meta name="description" content="fullPage plugin by Alvaro Trigo. Create fullscreen pages fast and simple. One page scroll like iPhone website." />
 	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple" />
 	<meta name="Resource-type" content="Document" />
-  <link rel="stylesheet" href="./css/styles.css"></link>
-  <link rel="stylesheet" href="bootstrap.min.css" />
-  <script src="bootstrap.js"></script>
+  <link rel="stylesheet" href="./css/styles.css"/></link>
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
+  <link rel="stylesheet" href="./css/textAnimae.css" />
+  <link rel="stylesheet" href="./css/Animae.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="bootstrap.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/jquery.easings.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+  <script src="./js/jquery.lettering-0.6.1.min.js"></script>
   <script src='./js/snowfall.min.js'></script>
+  <script>
+  $(document).ready(function() {
+  $(".title").lettering();
+});
+  $(document).ready(function() {
+    animation();
+  }, 1000);
 
+
+  function animation() {
+    var title1 = new TimelineMax();
+    title1.staggerFromTo(".title span", 0.5,
+    {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -80},
+    {ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.05);
+    title1.to(".button", 0.2, {visibility: 'visible' ,opacity: 1})
+  }
+  </script>
+  <script>
+  $(document).ready(function(){
+    $.get("http://127.0.0.1:8000/article/newclothes/", function(res){
+      document.getElementById("newclothes").innerHTML= res.content;
+    })
+    $.get("http://127.0.0.1:8000/article/tangsuit/", function(res){
+      document.getElementById("tangsuit").innerHTML= res.content;
+    })
+    $.get("http://127.0.0.1:8000/article/qipao/", function(res){
+      document.getElementById("qipaoar").innerHTML= res.content;
+    })
+    $("#searchbtn").click(function(){
+      var title = document.getElementById("searchfield").value;
+      var tst = $.get("http://127.0.0.1:8000/article/"+title+"/", function(res){
+        alert(res.content);
+      }).fail(function(){
+
+        alert("Article is not in our database!");
+      })
+    })
+  });
+
+
+  </script>
+  </script>
 </head>
 <body style="background-image: url(./img/bggif01.gif) ;" >
   <div id="fullpage">
   	<div class="section active">
-
+      <section class="container">
+        <h1 class="h1b">
+          <span class="title">Let's</span>
+          <span class="title">view</span>
+          <span class="title">ZODIAC</span>
+        </h1>
+</section>
     </div>
   	<div class="section">
       <div class="slide">
-<table class="table bg-danger" >
+<table class="table" style="background-color: #FF4E36; background-image: url('./img/tablebg1.gif');" >
   <thead>
 
     <tr>
@@ -108,7 +158,8 @@
 </table>
        </div>
     	<div class="slide">
-<table class="table bg-danger">
+<table class="table" style="background-color: #FF4E36; background-image: url('./img/tablebg2.gif');">
+
       <thead>
         <tr>
           <th>Year</th>
@@ -277,31 +328,11 @@
        </div>
 
     </div>
-    <div class="section">Origin of the zodiacs
-One legend says that the Jade Emperor (玉皇大帝—yù huáng dà dì) needed to choose 12 animals as palace guards. The Cat asked his neighbor Rat to help him sign up. Rat forgot, which is why they became mortal enemies.
-
-At the palace, Ox was first in line, but Rat secretly climbed onto Ox's back and jumped in front of him. Tiger and Dragon thought it was unfair, but they could only settle behind Ox. Rabbit found it unfair too. He wanted to race with Dragon and succeeded.
-
-This angered Dog, who bit Rabbit in a fit and was sent to the back as punishment. Snake, Horse, Goat, Monkey and Rooster fought amongst themselves as well. Pig came late, after everything was finally settled, and could only be the last.
-
-Of course, this is only a story. Cats didn't even exist in China when zodiac animals first came about.</div>
+    <div class="section">
+      <h4 class="Melody">Origin of the zodiacs</h4><br />
+</div>
   	<div class="section">
-      The science behind it all
-How do Chinese astrologers know each zodiac's personality, fortune and compatibility with others?
-
-Below is some technical information you might be interested in.
-
-Dì Zhī (地支), or Earthly Branches, were the original terms used for the years. These branches are also assigned to the hours of the day, based on solar time.
-
-The animals were later added as mnemonics and categorized as either yīn (阴) or yáng (阳).
-
-Ten Celestial Stems (天干—tiān gān) pair with the Earthly Branches for a 60 year calendrical cycle. Then add in an element. These cycle through, but each zodiac also has a fixed element. This fixed element is what determines which sign you're compatible with.
-
-Twelve Earthly Branches: zi (子), chǒu (丑), yín (寅), mǎo (卯), chén (辰), sì (巳), wǔ (午), wèi (未), shēn (申), yǒu (酉), xū (戌), hài (亥).
-
-Ten Celestial Stems: jiǎ (甲), yǐ (乙), bǐng (丙), ding (丁), wù (戊), jǐ (己), gēng (庚), xīn (辛), rén (壬), guǐ (癸).
-
-Five elements: water (水—shuǐ), wood (木—mù), fire (火—huǒ), earth (土—tǔ), metal (金—jīn).
+      <h4 class="IBM">The science behind it all</h4>
     </div>
 
   </div>
