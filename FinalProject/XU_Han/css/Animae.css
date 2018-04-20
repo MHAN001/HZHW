@@ -122,7 +122,7 @@
 }
 
 .bonus:checked {
-    background-image: url(img/bonus_1.png) !important;
+    background-image: url(../img/bonus_1.png) !important;
     width: 24px;
     height: 24px;
     position: static;
@@ -769,4 +769,61 @@
     animation: animation99 5s 30s linear;
     animation-fill-mode: forwards;
     display: block;
+}
+
+
+/*  drag panel */
+*, *:before {
+  box-sizing: border-box;
+  position: relative;
+}
+.h2b {
+  font-size: 1.4em;
+  font-weight: 300;
+  color: #222;
+}
+p:not(:last-child) {
+  margin-bottom: 0.6em;
+}
+p.small {
+  font-size: 0.8em;
+  color: #222;
+  text-align: center;
+}
+
+.article {
+  width: 1000px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  z-index: 1;
+}
+.article:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(5px) saturate(2);
+}
+.article .titlea {
+  padding: 8px;
+  background: rgba(235, 235, 235, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.article .titlea:hover {
+  cursor: move;
+}
+.article .glass {
+  min-height: 200px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.2);
 }

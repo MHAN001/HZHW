@@ -12,39 +12,45 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="bootstrap.js"></script>
+  <script src="js/bootstrap.js"></script>
 
-  <script>
-  $(function () {
-    $('[data-toggle="popover"]').popover()
+<script>
+$(document).ready(function(){
+  $.get("http://127.0.0.1:8000/article/newclothes/", function(res){
+    document.getElementById("newclothes").innerHTML= res.content;
   })
-  $('body').on('mouseenter mouseleave','.dropdown',function(e){
-  var _d=$(e.target).closest('.dropdown');_d.addClass('show');
-  setTimeout(function(){
-    _d[_d.is(':hover')?'addClass':'removeClass']('show');
-  },300);
+  $.get("http://127.0.0.1:8000/article/tangsuit/", function(res){
+    document.getElementById("tangsuit").innerHTML= res.content;
+  })
+  $.get("http://127.0.0.1:8000/article/qipao/", function(res){
+    document.getElementById("qipaoar").innerHTML= res.content;
+  })
+  $("#searchbtn").click(function(){
+    var title = document.getElementById("searchfield").value;
+    var tst = $.get("http://127.0.0.1:8000/article/"+title+"/", function(res){
+      alert(res.content);
+    }).fail(function(){
+
+      alert("Article is not in our database!");
+    })
+  })
+
+
 });
-  </script>
+
+</script>
   <script>
   $(document).ready(function(){
-    $.get("http://127.0.0.1:8000/article/newclothes/", function(res){
-      document.getElementById("newclothes").innerHTML= res.content;
+    $(function () {
+      $('[data-toggle="popover"]').popover()
     })
-    $.get("http://127.0.0.1:8000/article/tangsuit/", function(res){
-      document.getElementById("tangsuit").innerHTML= res.content;
-    })
-    $.get("http://127.0.0.1:8000/article/qipao/", function(res){
-      document.getElementById("qipaoar").innerHTML= res.content;
-    })
-    $("#searchbtn").click(function(){
-      var title = document.getElementById("searchfield").value;
-      var tst = $.get("http://127.0.0.1:8000/article/"+title+"/", function(res){
-        alert(res.content);
-      }).fail(function(){
+    $('body').on('mouseenter mouseleave','.dropdown',function(e){
+    var _d=$(e.target).closest('.dropdown');_d.addClass('show');
+    setTimeout(function(){
+      _d[_d.is(':hover')?'addClass':'removeClass']('show');
+    },300);
+  });
 
-        alert("Article is not in our database!");
-      })
-    })
   });
 
 
