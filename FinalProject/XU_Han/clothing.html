@@ -25,36 +25,21 @@ $(document).ready(function(){
   $.get("http://127.0.0.1:8000/article/qipao/", function(res){
     document.getElementById("qipaoar").innerHTML= res.content;
   })
-  $("#searchbtn").click(function(){
+  $("#searchbtn").click(function(e){
+    e.preventDefault();
     var title = document.getElementById("searchfield").value;
     var tst = $.get("http://127.0.0.1:8000/article/"+title+"/", function(res){
-      alert(res.content);
+      // alert(res.content);
+      document.getElementById("exampleModalLongTitle").innerHTML = title;
+      document.getElementById("modalarticle").innerHTML = res.content;
     }).fail(function(){
-
-      alert("Article is not in our database!");
+      // alert("Article is not in our database!");
+      document.getElementById("modalarticle").innerHTML = "Article you searched is not in our database";
     })
   })
-
-
 });
 
 </script>
-  <script>
-  $(document).ready(function(){
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-    })
-    $('body').on('mouseenter mouseleave','.dropdown',function(e){
-    var _d=$(e.target).closest('.dropdown');_d.addClass('show');
-    setTimeout(function(){
-      _d[_d.is(':hover')?'addClass':'removeClass']('show');
-    },300);
-  });
-
-  });
-
-
-  </script>
 <style type="text/css">
   .dropdown_menu:hover>.dropdown-menu {
   display: block;
@@ -104,7 +89,7 @@ $(document).ready(function(){
           </ul>
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-controle mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="searchfield">
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" id="searchbtn">Search</button>
+            <button class="btn btn-outline-danger my-2 my-sm-0"  id="searchbtn" data-toggle="modal" data-target="#exampleModalCenter">Search</button>
           </form>
         </div>
     </nav>
@@ -123,7 +108,7 @@ $(document).ready(function(){
           <img class="d-block w-100 img-fluid" src="img/Qipao3.jpg" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
             <h1 id="list-item-1">Get to know Qipao</h1>
-            <p>We are dedivating offer the best service for our customer</p>
+            <p>Qipao is extremely popular in China during the period of the republic of China era.</p>
             <p><a class="btn btn-lg btn-danger" href="#" role="button">Check Now</a></p>
         </div>
         </div>
@@ -131,15 +116,15 @@ $(document).ready(function(){
           <img class="d-block w-100 img-fluid" src="img/Qipao2.jpg" alt="Second slide">
           <div class="carousel-caption d-none d-md-block">
             <h1>Spring clothes in movies</h1>
-            <p>Have a wondeful trip with your friend by coming into our exdrodinary bar</p>
-            <p><a class="btn btn-lg btn-danger" href="#" role="button">Explore More</a></p>
+            <p>Qipao and cheongsam are very popular in many Chinese movies since it is easy to show the temperament.</p>
+            <p><a class="btn btn-lg btn-danger" href="https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=qipao" role="button">Buy Now</a></p>
         </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100 img-fluid" src="img/Qipao.jpg" alt="Third slide">
           <div class="carousel-caption d-none d-md-block">
             <h1>Family portrait</h1>
-            <p>Oue beans are all transfered from Indonesia</p>
+            <p>It is a tradition to have a portrait during the spring festival for most of chinese families.</p>
             <p><a class="btn btn-lg btn-danger" href="#" role="button">Buy now!</a></p>
         </div>
         </div>
@@ -359,4 +344,23 @@ It is a modified version of Qing dynasty clothing and was formal wear during the
     </footer>
 
     </body>
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="modalarticle">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </html>

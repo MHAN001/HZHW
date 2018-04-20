@@ -184,7 +184,7 @@
 
 .board .bonus:hover {
     cursor: crosshair;
-    zoom: 2;
+    
 }
 
 .board:hover #bonus_01 {
@@ -794,8 +794,8 @@ p.small {
 .article {
   width: 1000px;
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: -10%;
+  right: 10%;
   background: inherit;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
@@ -827,3 +827,16 @@ p.small {
   padding: 8px;
   background: rgba(255, 255, 255, 0.2);
 }
+/*  back to top*/
+/* .back-to-top {
+            position:fixed;
+            right:50px;
+            z-index:9;
+            width:70px;
+            height:900px;
+            background:url('/Content/Images/scroll.png');
+            transition:0.5s;
+            cursor:pointer;
+       }
+
+ */
