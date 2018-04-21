@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ChineseSpringFestival</title>
+<title>SpringFestival</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/lightbox.css" rel="stylesheet">
@@ -9,7 +9,35 @@
 <!-- Custom Theme files -->
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/lightbox-plus-jquery.min.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--//end-animate-->
+<script>
+jQuery(document).ready(function(){
+jQuery("#insertbtn").click(function(){
+    // alert("clickfunction");
+
+    var a = document.getElementById("insertname").value;
+    var b = document.getElementById("insertpwd").value;
+    // var a = String(username);
+    // var b = String(pwd);
+    var obj ={"username":a,"password":b};
+    const data = JSON.stringify(obj);
+    jQuery.ajax({
+      type: "POST",
+      url: "http://127.0.0.1:8000/user/adduser",
+      contentType: 'application/json',
+      data:data,
+      // dataType: 'json',
+      success: function(res){
+        alert(res);
+      }
+    });
+    // jQuery.post("http://127.0.0.1:8000/user/adduser",obj);
+});
+
+
+	});
+</script>
 </head>
 <body>
 	<!--header-->
@@ -32,8 +60,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<h1><a class="navbar-brand wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s; color: #FFA500;" href="#">Chinese Spring Festival</a></h1>
+					<h1><a class="navbar-brand wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s; color: #FFA500;" href="#">Spring Festival</a></h1>
 				</div>
+
 				<div style="float : right;" id="loginform">
 						<input type="text" placeholder="username" name="un" id="username" style="margin-bottom: 10px;"/><br/>
 						<input type="text" placeholder="password" name="pw" id="password" style="margin-bottom: 10px;"/><br/>
@@ -43,6 +72,7 @@
 					<h2 style="color:rgba(233, 219, 15, 0.788)" id="welcomemsg">Welcomasdfe</h2></br>
 					<button style="background-color:rgba(233, 219, 15, 0.788);margin-bottom: 80px;" type="submit" value="submit" onclick="logout()">Logout</button>
 			</div>
+
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
@@ -172,8 +202,13 @@
 						<span class="glyphicon glyphicon-dashboar" aria-hidden="true"></span>
 					</div>	 -->
 					<div class="caption work-captn">
+<<<<<<< Updated upstream
 						<a href="../SHUCHAO_HUANG/springgala/index.html">Spring Festival Gala</a>
 						<p>The CCTV New Year's Gala, also known as the Spring Festival Gala</p>
+=======
+						<h4><a href="../SHUCHAO_HUANG/springgala/index.html">Spring Festival Gala</a></h4>
+						<p>Bamboo stems filled with gunpowde</p>
+>>>>>>> Stashed changes
 					 </div>
 				</div>
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
@@ -181,7 +216,7 @@
 						<img class="img-responsive img-circle dondondon" src="https://i.imgur.com/rdOquj5.jpg?1" alt=""  >
 					</div>
 					<div class="caption work-captn">
-						<a href="../Xu_Han/clothing.html" class="text-light">Clothing</a>
+						<h4><a href="../Xu_Han/clothing.html" class="text-light">Clothing</a></h4>
 						<p>Clothing in red or yellow colors could scare away evil spirits and bad fortune.</p>
 					 </div>
 				</div>
@@ -190,7 +225,7 @@
 						<img class="img-responsive img-circle" src="https://i.imgur.com/sfg5cs4.jpg" alt=""  >
 					</div>
 					<div class="caption work-captn">
-						<h4>Symbolism</h4>
+						<h4><a href="../FANQI_ZHENG/SYMBOLISM/index.html"/>Symbolism</h4>
 						<p>Lanterns, Chunlian (Spring couplets), Fortune gods, Chinese knotting, New year picture</p>
 					 </div>
 				</div>
@@ -200,8 +235,13 @@
 					</div>
 
 					<div class="caption work-captn">
+<<<<<<< Updated upstream
 						<a href="../SHUCHAO_HUANG/food/index.html"><h4>Foods</h4></a>
 						<p>Chinese Tradional Foods During the Spring Festival</p>
+=======
+						<h4><a href="../SHUCHAO_HUANG/food/index.html">Foods</a></h4>
+						<p>Loud, enthusiastic greetings which can be translated as auspicious words or phrases</p>
+>>>>>>> Stashed changes
 					 </div>
 				</div>
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
@@ -209,8 +249,13 @@
 						<img class="img-responsive img-circle" src="https://i.imgur.com/sYxxFX5.jpg?1" alt="" align="middle" >
 					</div>
 					<div class="caption work-captn">
+<<<<<<< Updated upstream
 						<a href="../SHUCHAO_HUANG/activities.html">Activities</a>
 						<p>Chinese Tradional Activities During the Spring Festival</p>
+=======
+						<h4><a href="../SHUCHAO_HUANG/activities.html">Activities</a></h4>
+						<p>Dragon Dance and Lion Dance</p>
+>>>>>>> Stashed changes
 					 </div>
 				</div>
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
@@ -218,7 +263,7 @@
 						<img class="img-responsive img-circle" src="https://i.imgur.com/mEjDe3l.jpg?1" alt=""  >
 					</div>
 					<div class="caption work-captn">
-						<a href="../YANKAI_WANG/Firwork.html">Fireworks</a>
+						<h4><a href="../YANKAI_WANG/Firwork.html">Fireworks</a></h4>
 					<p>Bamboo stems filled with gunpowder that were burnt to create small explosions to drive away evil spirits.</p>
 					 </div>
 				</div>
@@ -315,9 +360,9 @@
 			<h3 class="title">Register Now</h3>
 			<div class="col-md-7 contact-right wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 				<form>
-					<input type="text" value="Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}" required="">
-					<input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Password';}" required="">
-					<input type="submit" value="Submit" >
+					<input type="text" value="userName" id="insertname" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}" required="">
+					<input type="password" value="Password" id="insertpwd" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Password';}" required="">
+					<input type="submit" value="Submit" id="insertbtn">
 				</form>
 			</div>
 			<div class="col-md-5 contact-left wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
