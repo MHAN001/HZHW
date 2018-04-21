@@ -9,29 +9,32 @@
 <!-- Custom Theme files -->
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/lightbox-plus-jquery.min.js"> </script>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.slim.js"
-  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--//end-animate-->
 <script>
-jQuery("#insertbtn")
-	jQuery(document).ready(function(){
-    var username = document.getElementById("insertname").value;
-    var pwd = document.getElementById("insertpwd").value;
-    var obj = jQuery.parseJSON('{"username":username,"password":pwd}');
+jQuery(document).ready(function(){
+jQuery("#insertbtn").click(function(){
+    // alert("clickfunction");
+
+    var a = document.getElementById("insertname").value;
+    var b = document.getElementById("insertpwd").value;
+    // var a = String(username);
+    // var b = String(pwd);
+    var obj ={"username":a,"password":b};
+    const data = JSON.stringify(obj);
     jQuery.ajax({
       type: "POST",
-      url: "http://127.0.0.1:8000/",
-      data: obj,
-      dataType: 'json',
+      url: "http://127.0.0.1:8000/user/adduser",
+      contentType: 'application/json',
+      data:data,
+      // dataType: 'json',
       success: function(res){
         alert(res);
-      },
-      error: function(){
-        alert("Unknown Error");
       }
     });
+    // jQuery.post("http://127.0.0.1:8000/user/adduser",obj);
+});
+
 
 	});
 </script>
