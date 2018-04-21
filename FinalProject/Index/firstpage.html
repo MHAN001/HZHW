@@ -15,9 +15,23 @@
   crossorigin="anonymous"></script>
 <!--//end-animate-->
 <script>
+jQuery("#insertbtn")
 	jQuery(document).ready(function(){
-    var username = 
-    jQuery.post();
+    var username = document.getElementById("insertname").value;
+    var pwd = document.getElementById("insertpwd").value;
+    var obj = jQuery.parseJSON('{"username":username,"password":pwd}');
+    jQuery.ajax({
+      type: "POST",
+      url: "http://127.0.0.1:8000/",
+      data: obj,
+      dataType: 'json',
+      success: function(res){
+        alert(res);
+      },
+      error: function(){
+        alert("Unknown Error");
+      }
+    });
 
 	});
 </script>
@@ -326,9 +340,9 @@
 			<h3 class="title">Register Now</h3>
 			<div class="col-md-7 contact-right wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 				<form>
-					<input type="text" value="Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}" required="">
-					<input type="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Password';}" required="">
-					<input type="submit" value="Submit" >
+					<input type="text" value="userName" id="insertname" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}" required="">
+					<input type="password" value="Password" id="insertpwd" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Password';}" required="">
+					<input type="submit" value="Submit" id="insertbtn">
 				</form>
 			</div>
 			<div class="col-md-5 contact-left wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
