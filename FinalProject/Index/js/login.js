@@ -21,10 +21,6 @@ function loginaction() {
   function AjaxFailed(result) {
       alert("Username/password combo wrong!");
   }
-    // $.get( loginurl, function( data ) {
-    //   alert( "Data Loaded: " + data );
-    // }, "text");
-    // alert("get here")
   };
 
   function logout() {
@@ -37,4 +33,24 @@ function loginaction() {
     // x.innerText = "<h2>bold text?</h2>";
     // document.getElementById("welusermsg").innerText = "Welcome!";
  
+  };
+
+  function addUser() {
+  
+    var username =  document.getElementById("insertname").value;
+    var password = document.getElementById("insertpwd").value;
+    let requesturl= "http://127.0.0.1:8000/user/adduser/"+ username +"/password/" + password;
+    $.ajax({
+        type: "GET",
+        url: requesturl,
+        dataType: 'text json',
+        success: AjaxSucceeded,
+        error: AjaxFailed
+    });
+    function AjaxSucceeded(res) {
+        alert("You have been registered as user!");
+    }
+    function AjaxFailed(res) {
+        alert("Username/password combo wrong!");
+    }
   };

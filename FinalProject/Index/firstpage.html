@@ -12,31 +12,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--//end-animate-->
 <script>
-jQuery(document).ready(function(){
-jQuery("#insertbtn").click(function(){
-    // alert("clickfunction");
+// jQuery(document).ready(function(){
+// jQuery("#insertbtn").click(function(){
+//     // alert("clickfunction");
 
-    var a = document.getElementById("insertname").value;
-    var b = document.getElementById("insertpwd").value;
-    // var a = String(username);
-    // var b = String(pwd);
-    var obj ={"username":a,"password":b};
-    const data = JSON.stringify(obj);
-    jQuery.ajax({
-      type: "POST",
-      url: "http://127.0.0.1:8000/user/adduser",
-      contentType: 'application/json',
-      data:data,
-      // dataType: 'json',
-      success: function(res){
-        alert(res);
-      }
-    });
-    // jQuery.post("http://127.0.0.1:8000/user/adduser",obj);
-});
+//     var a = document.getElementById("insertname").value;
+//     var b = document.getElementById("insertpwd").value;
+//     // var a = String(username);
+//     // var b = String(pwd);
+//     var obj ={"username":a,"password":b};
+//     const data = JSON.stringify(obj);
+//     jQuery.ajax({
+//       type: "POST",
+//       url: "http://127.0.0.1:8000/user/adduser",
+//       contentType: 'application/json',
+//       data:data,
+//       // dataType: 'json',
+//       success: function(res){
+//         alert(res);
+//       }
+//     });
+//     // jQuery.post("http://127.0.0.1:8000/user/adduser",obj);
+// });
 
 
-	});
+// 	});
 </script>
 </head>
 <body>
@@ -202,13 +202,10 @@ jQuery("#insertbtn").click(function(){
 						<span class="glyphicon glyphicon-dashboar" aria-hidden="true"></span>
 					</div>	 -->
 					<div class="caption work-captn">
-<<<<<<< Updated upstream
-						<a href="../SHUCHAO_HUANG/springgala/index.html">Spring Festival Gala</a>
-						<p>The CCTV New Year's Gala, also known as the Spring Festival Gala</p>
-=======
+
 						<h4><a href="../SHUCHAO_HUANG/springgala/index.html">Spring Festival Gala</a></h4>
 						<p>Bamboo stems filled with gunpowde</p>
->>>>>>> Stashed changes
+
 					 </div>
 				</div>
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
@@ -235,13 +232,10 @@ jQuery("#insertbtn").click(function(){
 					</div>
 
 					<div class="caption work-captn">
-<<<<<<< Updated upstream
-						<a href="../SHUCHAO_HUANG/food/index.html"><h4>Foods</h4></a>
-						<p>Chinese Tradional Foods During the Spring Festival</p>
-=======
+
 						<h4><a href="../SHUCHAO_HUANG/food/index.html">Foods</a></h4>
 						<p>Loud, enthusiastic greetings which can be translated as auspicious words or phrases</p>
->>>>>>> Stashed changes
+
 					 </div>
 				</div>
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
@@ -249,13 +243,10 @@ jQuery("#insertbtn").click(function(){
 						<img class="img-responsive img-circle" src="https://i.imgur.com/sYxxFX5.jpg?1" alt="" align="middle" >
 					</div>
 					<div class="caption work-captn">
-<<<<<<< Updated upstream
-						<a href="../SHUCHAO_HUANG/activities.html">Activities</a>
-						<p>Chinese Tradional Activities During the Spring Festival</p>
-=======
+
 						<h4><a href="../SHUCHAO_HUANG/activities.html">Activities</a></h4>
 						<p>Dragon Dance and Lion Dance</p>
->>>>>>> Stashed changes
+
 					 </div>
 				</div>
 				<div class="col-sm-6 col-md-4 work-row-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
@@ -362,7 +353,7 @@ jQuery("#insertbtn").click(function(){
 				<form>
 					<input type="text" value="userName" id="insertname" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}" required="">
 					<input type="password" value="Password" id="insertpwd" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Password';}" required="">
-					<input type="submit" value="Submit" id="insertbtn">
+					<input type="submit" value="Submit" id="insertbtn" onclick="addUser()">
 				</form>
 			</div>
 			<div class="col-md-5 contact-left wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
